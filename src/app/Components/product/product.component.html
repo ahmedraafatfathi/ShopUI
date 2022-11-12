@@ -1,0 +1,28 @@
+<div class="container col-sm-12">
+    <h1 class="prodLbl">Products information</h1>
+    <div class="row justify-content-md-center">
+        <div class="col col-md-2"
+            *ngFor="let item of products | paginate: { itemsPerPage: pageSize, currentPage: pageNumber }">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><span class="prodTxt">Name: </span>{{item.name}}</h5>
+                    <p class="card-text">{{item.desc}} ----- {{item.price}}</p>
+                    <p class="card-text"><span class="prodTxt">Category: </span>{{item.categoryName}}</p>
+                    <p class="card-text"><span class="prodTxt">Available Qty: </span>{{item.availableQuantity}}</p>
+                    <form [formGroup]="addCartForm" novalidate class="form">
+                        <div class="form-group">
+                            <input placeholder="Qty" name="quantity{{item.id}}"
+                                type="number" class="form-control" id="quantity{{item.id}}">
+                        </div>
+                    </form>
+                    <a (click)="addCartInfo(item)" class="btnAdd btn btn-primary">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<pagination-controls (pageChange)="onTableDataChange($event)"></pagination-controls>
+<!-- <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls> -->

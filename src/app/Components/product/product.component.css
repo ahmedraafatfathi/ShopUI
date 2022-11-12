@@ -1,0 +1,31 @@
+::ng-deep .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background-color: #1abc9c !important;
+    color: #fefefe;
+    cursor: default;
+}
+::ng-deep .ngx-pagination {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+  }
+.card{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.card .btnAdd{
+    background-color: #1abc9c !important;
+    border: none;
+    color: white;
+}
+.prodLbl{
+    text-align: center;
+    color: #1abc9c;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.prodTxt{
+    color: #1abc9c !important;
+}
+

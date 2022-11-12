@@ -1,0 +1,35 @@
+.offsetDiv{
+    background-image: url("../../../assets/Images/work.jpg");
+    background-size: cover;
+    min-height: 100vh;
+}
+.navStyle{
+    color: #1abc9c;
+    font-weight: bold;
+    font-style: italic;
+}
+.btnStyle{
+    background-color: #1abc9c; 
+    font-weight: bold; 
+    font-style: italic;
+    color: white;
+    
+}
+.alertMsg{
+    background-color: #c95f5f; 
+    color: white;
+    padding: 5px;
+}
+
+.accountLogo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.accountBtn{
+    color: white; 
+    border-radius: 5px; 
+    padding: 5px; 
+    border: 0; 
+    margin: 5px 0;
+}

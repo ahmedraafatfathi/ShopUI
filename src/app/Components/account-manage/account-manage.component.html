@@ -1,0 +1,192 @@
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-md-9 offsetDiv"></div>
+        <div class="col-md-3">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active navStyle" data-toggle="tab" href="#tabs-1" role="tab">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navStyle" data-toggle="tab" href="#tabs-2" role="tab">Sign up</a>
+                </li>
+            </ul>
+
+
+            <!-- Tab panes -->
+            <div class="tab-content" style="padding: 25px 0;">
+                <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                    <!-- Login Form -->
+                    <form [formGroup]="loginForm" novalidate class="form">
+
+                        <!-- <div class="form-group">
+                            <input formControlName="emailLogin" placeholder="Email" name="emailLogin"
+                                class="form-control" id="emailLogin">
+
+                            <div class="alert  alertMsg"
+                                *ngIf="loginForm.get('emailLogin').hasError('required') && loginForm.get('emailLogin').touched">
+                                Email is required
+                            </div>
+                            <div class="alert  alertMsg" *ngIf="loginForm.get('emailLogin').hasError('pattern')">
+                                Email is invalid
+                            </div>
+
+                        </div> -->
+                        <div class="form-group">
+                            <input formControlName="usernameLogin" placeholder="Username" name="usernameLogin"
+                                class="form-control" id="usernameLogin">
+
+                            <div class="alert  alertMsg"
+                                *ngIf="loginForm.get('usernameLogin').hasError('required') && loginForm.get('usernameLogin').touched">
+                                Username is required
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input formControlName="passwordLogin" placeholder="Password" name="passwordLogin"
+                                type="password" class="form-control" id="passwordLogin">
+
+                            <div class="alert  alertMsg"
+                                *ngIf="loginForm.get('passwordLogin').hasError('required') && loginForm.get('passwordLogin').touched">
+                                Password is required
+                            </div>
+
+                            <!-- <div class="alert  alertMsg" *ngIf="loginForm.get('passwordLogin').hasError('minlength')">
+                                Password Must be more than 7 digits
+                            </div> -->
+                        </div>
+
+
+                        <button class="form-control btn btnStyle" [disabled]='loginForm.invalid'
+                            (click)="login()">Login</button>
+                        <!-- <button class="btn btn-danger" style="margin-left: 5px;" (click)="back()">Back To Main</button> -->
+                    </form>
+
+                </div>
+
+                <div class="tab-pane" id="tabs-2" role="tabpanel">
+                    <!-- Register Form -->
+                    <form [formGroup]="registerForm" novalidate class="form">
+
+                        <!-- <input type="hidden" formControlName="id" placeholder="Id" name="id" class="form-control" id="id">   -->
+
+
+                        <div class="form-group">
+                            <input formControlName="firstName" placeholder="First Name" name="firstName"
+                                class="form-control" id="firstName">
+
+                            <div class="alert alertMsg"
+                                *ngIf="registerForm.get('firstName').hasError('required') && registerForm.get('firstName').touched">
+                                First Name is required
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input formControlName="lastName" placeholder="Last Name" name="lastName"
+                                class="form-control" id="lastName">
+
+                            <div class="alert alertMsg"
+                                *ngIf="registerForm.get('lastName').hasError('required') && registerForm.get('lastName').touched">
+                                Last Name is required
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input formControlName="userName" placeholder="Username" name="userName"
+                                class="form-control" id="userName">
+
+                            <div class="alert alertMsg"
+                                *ngIf="registerForm.get('userName').hasError('required') && registerForm.get('userName').touched">
+                                Username is required
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input formControlName="email" placeholder="Email" name="email" class="form-control"
+                                id="email">
+
+                            <div class="alert  alertMsg"
+                                *ngIf="registerForm.get('email').hasError('required') && registerForm.get('email').touched">
+                                Email is required
+                            </div>
+                            <div class="alert alertMsg" *ngIf="registerForm.get('email').hasError('pattern')">
+                                Valid Email is required
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="phoneNumber" placeholder="Phone" name="phoneNumber"
+                                class="form-control" id="phoneNumber">
+
+                            <div class="alert  alertMsg"
+                                *ngIf="registerForm.get('phoneNumber').hasError('required') && registerForm.get('phoneNumber').touched">
+                                Phone is required
+                            </div>
+                            <div class="alert alertMsg" *ngIf="registerForm.get('phoneNumber').hasError('pattern')">
+                                Valid Phone is required
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input formControlName="birthDate" type="date" placeholder="Birthdate" name="birthDate"
+                                class="form-control" id="BirthDate">
+
+                            <div class="alert  alertMsg"
+                                *ngIf="registerForm.get('birthDate').hasError('required') && registerForm.get('birthDate').touched">
+                                Birthdate is required
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <select formControlName="gender" placeholder="Gender" name="gender"
+                            class="form-control" id="gender">
+                                <option *ngFor="let item of genders" [ngValue]="item.id">{{item.name}}
+                                </option>
+                            </select>
+
+                            <div class="alert  alertMsg"
+                                *ngIf="registerForm.get('gender').hasError('required') && registerForm.get('gender').touched">
+                                Gender is required
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input formControlName="password" placeholder="Password" name="password" type="password"
+                                class="form-control" id="password">
+
+                            <div class="alert alertMsg"
+                                *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">
+                                Password is required
+                            </div>
+
+                            <div class="alert alertMsg" *ngIf="registerForm.get('password').hasError('minlength')">
+                                Password Must be more than 7 digits
+                            </div>
+                        </div>
+
+
+
+                        <button class="form-control btn btnStyle" [disabled]='registerForm.invalid'
+                            (click)="register()">Register</button>
+
+                    </form>
+                </div>
+
+
+                <!-- <div style="margin-top:20px; border-top:1px dashed #1abc9c ;">
+                    <button class="form-control accountBtn" style="background-color: #ea4335;"
+                        (click)="socialSignIn('google')">
+                        Google</button>
+
+                    <button class="form-control accountBtn" style="background-color: #3a5b9b;"
+                        (click)="socialSignIn('facebook')">
+                        Facebook</button>
+                </div> -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
